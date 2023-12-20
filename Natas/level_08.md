@@ -15,14 +15,19 @@
 
 ## Decoding the Password
 3. You'll notice that the PHP source code contains an encoded password.
+   - To go from the secret to encoded secret the following steps are performed
+     - The secret is encoded to base64
+     - The resulting string is reversed
+     - The reversed string is converted to hex
+   - In order to get the original secret, we need to perform the same steps but in reverse
 
 4. To decode the password, follow these steps:
    - Copy the encoded password.
    - Open a tool like CyberChef or use a similar method of your choice.
    - Perform the following operations in reverse order:
-     - Convert from base64 to obtain a reversed string.
-     - Reverse the string to restore the original order.
-     - Convert the reversed string from hex.
+     - Convert the string from hex 
+     - Reverse the resuting string to get a base64 string
+     - Convert from base64 to obtain athe original secret
    ![CyberChef](images/level_08_03.png)
 
 ## Success
